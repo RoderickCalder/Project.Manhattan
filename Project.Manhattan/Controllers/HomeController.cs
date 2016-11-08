@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Project.Manhattan1.Models;
+using Project.Manhattan1.Services;
 
 namespace Project.Manhattan1.Controllers
 {
@@ -13,18 +15,12 @@ namespace Project.Manhattan1.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public bool MessageSender(MessageModel messageModel)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            bool messageSent = new MessageHandler();
+            messageSent = 
+            return true;
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
