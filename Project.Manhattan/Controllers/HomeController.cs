@@ -17,9 +17,8 @@ namespace Project.Manhattan1.Controllers
 
         public bool MessageSender(MessageModel messageModel)
         {
-            bool messageSent = new MessageHandler();
-            messageSent = 
-            return true;
+            var messageSent = new MessageHandler();
+            return messageSent.Handling(messageModel);
         }
 
     }

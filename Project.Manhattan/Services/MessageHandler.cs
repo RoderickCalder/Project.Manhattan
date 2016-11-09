@@ -8,12 +8,13 @@ using Project.Manhattan1.Models;
 
 namespace Project.Manhattan1.Services
 {
-    public class MessageHandler
+    public class MessageHandler : IMessageHandler
     {
         public bool MessageSend(MessageModel messageModel)
         {
-
-            return true;
+            var messageSend = new MessageSend();
+            return messageSend.getMessages();
+            ;
         }
 
         public MessageModel MessageGet(DateTime dateTime)
@@ -26,5 +27,10 @@ namespace Project.Manhattan1.Services
         {
             return messageModel;
         }
-        public bool Handling
+
+        public bool Handling(MessageModel message)
+        {
+            return true;
+        }
     }
+}
