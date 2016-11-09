@@ -12,8 +12,9 @@ namespace Project.Manhattan1.Services
 {
     public class MessageSend : IMessageSend
     {
-        
-
-
+        public bool getMessages()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
