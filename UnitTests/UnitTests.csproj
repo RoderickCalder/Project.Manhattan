@@ -67,8 +67,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Project.Manhattan\Project.Manhattan.csproj">
-      <Project>{6801C54B-70F3-4DB7-A7A4-82EA7457ED22}</Project>
+    <ProjectReference Include="..\Project.Manhattan1\Project.Manhattan.csproj">
+      <Project>{d95381d8-aa9f-4fa5-8a0b-1575fb6c1f18}</Project>
       <Name>Project.Manhattan</Name>
     </ProjectReference>
   </ItemGroup>
