@@ -10,6 +10,6 @@ namespace Project.Manhattan1.Models
 
         public string Message { get; set; }
         public string User { get; set; }
-        public DateTime DateTime { get; set; }
+        public string DateTime { get; set; }
     }
 }

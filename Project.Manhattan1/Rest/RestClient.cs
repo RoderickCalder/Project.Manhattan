@@ -37,7 +37,7 @@ namespace Project.Manhattan1.Rest
             
             client.BaseAddress = new Uri(URL);
 
-            HttpResponseMessage response = client.PutAsync(urlPramaters, body).Result;
+            HttpResponseMessage response = client.PostAsync(urlPramaters, body).Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -48,13 +48,13 @@ namespace Project.Manhattan1.Rest
                 return false;
             }
         }
-        public string getMessage(DateTime dateTime)
+        public string getMessage()
         {
             HttpClient client = new HttpClient();
 
             client.BaseAddress = new Uri(URL);
 
-            return client.GetStringAsync(urlPramaters).ToString();
+            return client.GetStringAsync(urlPramaters).Result;
         }
     }
 }

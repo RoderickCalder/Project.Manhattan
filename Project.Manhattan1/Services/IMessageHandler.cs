@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Project.Manhattan1.Models;
 
 namespace Project.Manhattan1.Services
@@ -6,7 +7,7 @@ namespace Project.Manhattan1.Services
     public interface IMessageHandler
     {
         bool MessageSend(MessageModel messageModel);
-        MessageModel MessageGet(DateTime dateTime);
+        List<MessageModel> MessageGet();
         MessageModel DataManip(MessageModel messageModel);
         bool Handling(MessageModel message);
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Project.Manhattan1.Services;
@@ -13,20 +14,22 @@ namespace UnitTests.Services.GetMessage
         [TestMethod]
         public void CanGetMessagesFromTheDatabase()
         {
-            var testDate = new DateTime();
             var mockClass = new MessageSend();
             var testClass = new MessageGet();
             var testMessage = new MessageModel
             {
-                DateTime = DateTime.Now,
+                DateTime = DateTime.Now.ToString(),
                 Message = "Hello World!",
                 User = "Jack Black"
             };
-            testDate = testMessage.DateTime;
 
             mockClass.SendMessages(testMessage);
-
-            Assert.AreEqual(testClass.GetMessages(testDate), testMessage);
+            List<MessageModel> List = testClass.GetMessages();
+            foreach (var item in List)
+            {
+                Assert.AreEqual(item.Message, testMessage.Message);
+                Assert.AreEqual(item.User, testMessage.User);
+            }
         }
 
         [TestMethod]
@@ -36,16 +39,18 @@ namespace UnitTests.Services.GetMessage
             JavaScriptSerializer jss = new JavaScriptSerializer();
             var testMessage = new MessageModel
             {
-                DateTime = DateTime.Now,
+                DateTime = DateTime.Now.ToString(),
                 Message = "Hello World!",
                 User = "Jack Black"
             };
             var stringSerialized = jss.Serialize(testMessage);
-            var result = testClass.DeserializeModel(stringSerialized);
+            List<MessageModel> result = testClass.DeserializeModel(stringSerialized);
 
-            Assert.AreEqual(result.DateTime, testMessage.DateTime);
-            Assert.AreEqual(result.Message, testMessage.Message);
-            Assert.AreEqual(result.User, testMessage.User);
+            foreach (var item in result)
+            {
+                Assert.AreEqual(item.Message, testMessage.Message);
+                Assert.AreEqual(item.User, testMessage.User);
+            }
         }
     }
 }

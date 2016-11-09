@@ -17,7 +17,7 @@ namespace UnitTests.Services.SendMessage
         {
             var testModel = new MessageModel
             {
-                DateTime = DateTime.Now,
+                DateTime = DateTime.Now.ToString(),
                 Message = "Bye World!",
                 User = "Jack Smack"
             };
@@ -31,7 +31,7 @@ namespace UnitTests.Services.SendMessage
         {
             var testModel = new MessageModel
             {
-                DateTime = DateTime.Now,
+                DateTime = DateTime.Now.ToString(),
                 Message = "Hello World!",
                 User = "Jack Black"
             };

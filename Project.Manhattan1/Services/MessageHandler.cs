@@ -16,10 +16,11 @@ namespace Project.Manhattan1.Services
             return messageSend.SendMessages(messageModel);
         }
 
-        public MessageModel MessageGet(DateTime dateTime)
+        public List<MessageModel> MessageGet()
         {
-            var message = new MessageModel();
-            return message;
+            var GetRequest = new MessageGet();
+            List<MessageModel> messages = GetRequest.GetMessages();
+            return messages;
         }
 
         public MessageModel DataManip(MessageModel messageModel)
