@@ -1,12 +1,38 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-}
 @model Project.Manhattan1.Models.MessageModel
-
-<div class="sendMessage">
-    <form enctype='application/json' align="center" method="post">
-        <textarea id="send-message" name='message' value='#' placeholder="Enter your message..." rows="4" cols="50"></textarea>
-        <br>
-        <button id="submit-button" type="submit" action="">Send Message</button>
-    </form>
+    }
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="Site.css">
+</head>
+<html>
+<div class="messageBox">
+    <div class="chatHistory">
+        <table class="messageTable">
+            <tr>
+                <td>tryley</td>
+                <td>Hello, you must be the coolest person i've ever met.</td>
+                <td>15:36</td>
+            </tr>
+            <tr>
+                <td>callumleeming</td>
+                <td>Obvs.</td>
+                <td>15:38</td>
+            </tr>
+            <tr>
+                <td>@Model.User</td>
+                <td>@Model.Message</td>
+                <td>@Model.DateTime</td>
+            </tr>
+        </table>
+    </div>
+    <div class="sendMessage">
+        <form enctype='application/json' align="center" action="Home/SendChat" method="post">
+            <textarea id="send-message" name='message' value='#' placeholder="Enter your message..." rows="4" cols="50"></textarea>
+            <br>
+            <button id="submit-button" type="submit" action="">Send Message</button>
+        </form>
+    </div>
 </div>
+</html>
