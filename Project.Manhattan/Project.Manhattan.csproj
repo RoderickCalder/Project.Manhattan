@@ -196,6 +196,7 @@
     </Compile>
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rest\RestClient.cs" />
     <Compile Include="Services\IMessageHandler.cs" />
     <Compile Include="Services\IMessageSend.cs" />
     <Compile Include="Services\MessageHandler.cs" />
