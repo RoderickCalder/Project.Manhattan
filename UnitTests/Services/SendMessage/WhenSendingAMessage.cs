@@ -18,8 +18,8 @@ namespace UnitTests.Services.SendMessage
             var testModel = new MessageModel
             {
                 DateTime = DateTime.Now,
-                Message = "Hello World!",
-                User = "Jack Black"
+                Message = "Bye World!",
+                User = "Jack Smack"
             };
             var testClass = new MessageSend();
 

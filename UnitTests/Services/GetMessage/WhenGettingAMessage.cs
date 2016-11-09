@@ -10,6 +10,7 @@ namespace UnitTests.Services.GetMessage
     [TestClass]
     public class WhenGettingAMessage
     {
+        [TestMethod]
         public void CanGetMessagesFromTheDatabase()
         {
             var testDate = new DateTime();
@@ -28,6 +29,7 @@ namespace UnitTests.Services.GetMessage
             Assert.AreEqual(testClass.GetMessages(testDate), testMessage);
         }
 
+        [TestMethod]
         public void TheMessageIsDeserializedCorrectly()
         {
             var testClass = new MessageGet();
@@ -39,8 +41,11 @@ namespace UnitTests.Services.GetMessage
                 User = "Jack Black"
             };
             var stringSerialized = jss.Serialize(testMessage);
+            var result = testClass.DeserializeModel(stringSerialized);
 
-            Assert.AreEqual(testClass.DeserializeModel(stringSerialized), testMessage);
+            Assert.AreEqual(result.DateTime, testMessage.DateTime);
+            Assert.AreEqual(result.Message, testMessage.Message);
+            Assert.AreEqual(result.User, testMessage.User);
         }
     }
 }

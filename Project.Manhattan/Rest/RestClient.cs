@@ -54,7 +54,7 @@ namespace Project.Manhattan1.Rest
 
             client.BaseAddress = new Uri(URL);
 
-            return client.GetAsync(urlPramaters).ToString();
+            return client.GetStringAsync(urlPramaters).ToString();
         }
     }
 }
