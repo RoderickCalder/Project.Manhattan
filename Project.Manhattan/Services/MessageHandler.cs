@@ -13,8 +13,7 @@ namespace Project.Manhattan1.Services
         public bool MessageSend(MessageModel messageModel)
         {
             var messageSend = new MessageSend();
-            return messageSend.getMessages();
-            ;
+            return messageSend.SendMessages(messageModel);
         }
 
         public MessageModel MessageGet(DateTime dateTime)

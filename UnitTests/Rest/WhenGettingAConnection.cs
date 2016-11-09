@@ -2,17 +2,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Project.Manhattan1.Services;
 using Project.Manhattan1.Models;
+using Project.Manhattan1.Rest;
 
 namespace UnitTests
 {
     [TestClass]
-    public class WhenSendingAMessage
+    public class WhenGetttingAConnection
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CanConnectToTheDatabase()
         {
-            var testing = new MessageSend();
-            Assert.AreEqual(true, testing.getMessages());
+            var testing = new RestClient();
+            Assert.AreEqual(true, testing.getConnection());
         }
     }
 }
