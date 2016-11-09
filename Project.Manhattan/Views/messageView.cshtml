@@ -1,0 +1,22 @@
+﻿@model Project.Manhattan1.Models.MessageModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="sendMessage">
+        <form enctype='application/json' align="center" method="post">
+            <textarea id="send-message" name='message' value='#' placeholder="Enter your message..." rows="4" cols="50"></textarea>
+            <br>
+            <button id="submit-button" type="submit" method="post">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
