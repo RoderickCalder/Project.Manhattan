@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Project.Manhattan1.Models;
 using Project.Manhattan1.Services;
+using Project.Manhattan1.Models;
 
 namespace Project.Manhattan1.Controllers
 {
@@ -15,11 +15,12 @@ namespace Project.Manhattan1.Controllers
             return View();
         }
 
-        public bool MessageSender(MessageModel messageModel)
+        [HttpPost]
+        public ActionResult Index(MessageModel messageModel)
         {
             var messageSent = new MessageHandler();
-            return messageSent.Handling(messageModel);
+            messageSent.MessageSend(messageModel);
+            return View();
         }
-
     }
 }
