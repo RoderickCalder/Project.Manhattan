@@ -22,7 +22,7 @@ namespace Project.Manhattan1.Controllers
         [HttpPost]
         public ActionResult Index(MessageModel messageModel)
         {
-            messageModel.DateTime = DateTime.Now;
+            messageModel.DateTime = DateTime.Now.ToString();
             messageModel.User = "ThisUser";
             messageHandler.MessageSend(messageModel);
             ModelState.Clear();
@@ -32,7 +32,7 @@ namespace Project.Manhattan1.Controllers
         [HttpPost]
         public ActionResult SendChat(MessageModel messageModel)
         {
-            messageModel.DateTime = DateTime.Now;
+            messageModel.DateTime = DateTime.Now.ToString();
             messageModel.User = "ThisUser";
             messageHandler.MessageSend(messageModel);
             ModelState.Clear();
