@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using Project.Manhattan1.Models;
 
 namespace Project.Manhattan1.Services
@@ -7,17 +8,23 @@ namespace Project.Manhattan1.Services
     {
         public bool UserSend(UserModel userModel)
         {
-            //var userSend = new MessageSend();
-            //return messageSend.SendMessages(messageModel);
-            return false;
+            var userSend = new UserSend();
+            return userSend.SendUsers(userModel);
         }
 
         public List<UserModel> UserGet()
         {
-            //var GetRequest = new UserHandler();
-            //List<MessageModel> messages = GetRequest.GetMessages();
-            //return messages;
-            return null;
+            var GetRequest = new UserHandler();
+            List<UserModel> messages = GetRequest.UserGet();
+            return messages;
         }
+
+        public List<UserModel> UsersMessages(UserModel userModel)
+        {
+            var userMessages = new UsersMessages();
+            userMessages.getMessages(userModel.Id);
+
+            return null;
+        } 
     }
 }
