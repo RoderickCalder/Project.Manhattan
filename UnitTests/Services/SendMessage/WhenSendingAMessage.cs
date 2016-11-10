@@ -19,7 +19,7 @@ namespace UnitTests.Services.SendMessage
             {
                 DateTime = DateTime.Now.ToString(),
                 Message = "Bye World!",
-                User = "Jack Smack"
+                UserTo = "Jack Smack"
             };
             var testClass = new MessageSend();
 
@@ -33,7 +33,7 @@ namespace UnitTests.Services.SendMessage
             {
                 DateTime = DateTime.Now.ToString(),
                 Message = "Hello World!",
-                User = "Jack Black"
+                UserTo = "Jack Black"
             };
             var testClass = new MessageSend();
 

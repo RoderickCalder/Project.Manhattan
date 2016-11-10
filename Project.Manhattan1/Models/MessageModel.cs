@@ -9,7 +9,8 @@ namespace Project.Manhattan1.Models
     {
 
         public string Message { get; set; }
-        public string User { get; set; }
         public string DateTime { get; set; }
+        public string UserFrom { get; set; }
+        public string UserTo { get; set; }
     }
 }
