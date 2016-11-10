@@ -14,20 +14,10 @@ namespace Project.Manhattan1.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var messageModel = new MessageModel();
-
+            var messageModel = messageHandler.MessageGet();
             return View("Index", messageModel);
         }
 
-        [HttpPost]
-        public ActionResult Index(MessageModel messageModel)
-        {
-            messageModel.DateTime = DateTime.Now.ToString();
-            messageModel.User = "ThisUser";
-            messageHandler.MessageSend(messageModel);
-            ModelState.Clear();
-            return View();
-        }
 
         [HttpPost]
         public ActionResult SendChat(MessageModel messageModel)
@@ -38,7 +28,6 @@ namespace Project.Manhattan1.Controllers
             ModelState.Clear();
             return Index();
         }
-        //SendChat
 
 
     }

@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-@model Project.Manhattan1.Models.MessageModel
-    }
+    @model   List<Project.Manhattan1.Models.MessageModel>
+  }
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="Site.css">
@@ -20,15 +20,19 @@
                 <td>Obvs.</td>
                 <td>15:38</td>
             </tr>
-            <tr>
-                <td>@Model.User</td>
-                <td>@Model.Message</td>
-                <td>@Model.DateTime</td>
-            </tr>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.User</td>
+                    <td>@m.Message</td>
+                    <td>@m.DateTime</td>
+                </tr>
+
+            }
         </table>
     </div>
     <div class="sendMessage">
-        <form enctype='application/json' align="center" action="Home/SendChat" method="post">
+        <form enctype='application/json' align="center" action="/Home/SendChat" method="post">
             <textarea id="send-message" name='message' value='#' placeholder="Enter your message..." rows="4" cols="50"></textarea>
             <br>
             <button id="submit-button" type="submit" action="">Send Message</button>

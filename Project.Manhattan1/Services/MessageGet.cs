@@ -19,7 +19,7 @@ namespace Project.Manhattan1.Services
         {
             JavaScriptSerializer jss = new JavaScriptSerializer();
             List<MessageModel> ListOfMessages = new List<MessageModel>();
-            ListOfMessages.Add(jss.Deserialize<MessageModel>(message));
+            ListOfMessages.Add(jss.Deserialize <MessageModel> (message));
             return ListOfMessages;
         }
     }
