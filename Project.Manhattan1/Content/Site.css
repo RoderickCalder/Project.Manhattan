@@ -49,6 +49,9 @@
 
         .chatHistory {
             margin: 20px 0px;
+            max-height: 400px;
+            overflow: scroll;
+            position: relative;
         }
 
         table, td, th {
