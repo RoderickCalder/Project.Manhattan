@@ -23,7 +23,7 @@ namespace Project.Manhattan1.Controllers
         public ActionResult SendChat(MessageModel messageModel)
         {
             messageModel.DateTime = DateTime.Now.ToString();
-            messageModel.User = "ThisUser";
+            messageModel.UserTo = "ThisUser";
             messageHandler.MessageSend(messageModel);
             ModelState.Clear();
             return Index();

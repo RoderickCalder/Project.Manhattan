@@ -8,12 +8,12 @@ namespace Project.Manhattan1.Rest
 {
     public class RestClient
     {
-        private const string URL = "https://project-manhattan-65c6a.firebaseio.com/user.json";
+        private const string URLMessage = "https://project-manhattan-65c6a.firebaseio.com/message.json";
         private string urlPramaters = "?auth=9Cg1ESEEm5wer6PpBAkMMc8EsUww1xr3b6amsqRO";
         public bool getConnection()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(URL);
+            client.BaseAddress = new Uri(URLMessage);
 
             HttpResponseMessage response = client.GetAsync(urlPramaters).Result;
 
@@ -35,7 +35,7 @@ namespace Project.Manhattan1.Rest
             HttpClient client = new HttpClient();
             HttpContent body = new StringContent(messageModel);
             
-            client.BaseAddress = new Uri(URL);
+            client.BaseAddress = new Uri(URLMessage);
 
             HttpResponseMessage response = client.PostAsync(urlPramaters, body).Result;
 
@@ -52,7 +52,7 @@ namespace Project.Manhattan1.Rest
         {
             HttpClient client = new HttpClient();
 
-            client.BaseAddress = new Uri(URL);
+            client.BaseAddress = new Uri(URLMessage);
 
             return client.GetStringAsync(urlPramaters).Result;
         }

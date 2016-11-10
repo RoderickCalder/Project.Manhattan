@@ -20,7 +20,7 @@ namespace UnitTests.Services.GetMessage
             {
                 DateTime = DateTime.Now.ToString(),
                 Message = "Hello World!",
-                User = "Jack Black"
+                UserTo = "Jack Black"
             };
 
             mockClass.SendMessages(testMessage);
@@ -29,7 +29,7 @@ namespace UnitTests.Services.GetMessage
             foreach (var item in List)
             {
                 Assert.AreEqual(item.Message, testMessage.Message);
-                Assert.AreEqual(item.User, testMessage.User);
+                Assert.AreEqual(item.UserTo, testMessage.UserTo);
             }
         }
 
@@ -42,7 +42,7 @@ namespace UnitTests.Services.GetMessage
             {
                 DateTime = DateTime.Now.ToString(),
                 Message = "Hello World!",
-                User = "Jack Black"
+                UserTo = "Jack Black"
             };
             var stringSerialized = jss.Serialize(testMessage);
             List<MessageModel> result = testClass.DeserializeModel(stringSerialized);
@@ -50,7 +50,7 @@ namespace UnitTests.Services.GetMessage
             foreach (var item in result)
             {
                 Assert.AreEqual(item.Message, testMessage.Message);
-                Assert.AreEqual(item.User, testMessage.User);
+                Assert.AreEqual(item.UserTo, testMessage.UserTo);
             }
         }
     }
