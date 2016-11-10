@@ -9,6 +9,7 @@ namespace Project.Manhattan1.Rest
     public class RestClient
     {
         private const string URLMessage = "https://project-manhattan-65c6a.firebaseio.com/message.json";
+        private const string URLUser = "https://project-manhattan-65c6a.firebaseio.com/user.json";
         private string urlPramaters = "?auth=9Cg1ESEEm5wer6PpBAkMMc8EsUww1xr3b6amsqRO";
         public bool getConnection()
         {
@@ -55,6 +56,34 @@ namespace Project.Manhattan1.Rest
             client.BaseAddress = new Uri(URLMessage);
 
             return client.GetStringAsync(urlPramaters).Result;
+        }
+
+        public string getUsers()
+        {
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri(URLUser);
+
+            return client.GetStringAsync(urlPramaters).Result;
+        }
+
+        public bool sendUser(string userModel)
+        {
+            HttpClient client = new HttpClient();
+            HttpContent body = new StringContent(userModel);
+
+            client.BaseAddress = new Uri(URLUser);
+
+            HttpResponseMessage response = client.PostAsync(urlPramaters, body).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
