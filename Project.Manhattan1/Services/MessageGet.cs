@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 using Project.Manhattan1.Models;
@@ -19,13 +20,9 @@ namespace Project.Manhattan1.Services
         public List<MessageModel> DeserializeModel(string message)
         {
             JavaScriptSerializer jss = new JavaScriptSerializer();
-            List<MessageModel> ListOfMessages = new List<MessageModel>();
-            var result = jss.Deserialize<dynamic>(message);
-            foreach (var entry in result.Values)
-            {
-                ListOfMessages.Add(new MessageModel { DateTime = entry["DateTime"], Message = entry["Message"], User = entry["User"]});
-            }
-            return ListOfMessages;
+            var result = jss.Deserialize<Dictionary<string, MessageModel>>(message);
+            return result.Values.ToList();
+          
         }
     }
 }
