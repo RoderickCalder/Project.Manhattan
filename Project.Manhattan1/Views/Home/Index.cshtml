@@ -6,6 +6,10 @@
 <head>
     <link rel="stylesheet" href="Site.css">
 </head>
+<script type="text/x-jquery-tmpl">
+    $(".chatHistory").animate({ scrollTop: $(this).height() }, "slow");
+    return false;
+</script>
 <html>
 <div class="messageBox">
     <div class="chatHistory">
