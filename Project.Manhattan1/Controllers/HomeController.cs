@@ -12,19 +12,20 @@ namespace Project.Manhattan1.Controllers
     {
         public MessageHandler messageHandler = new MessageHandler();
 
-        /*[HttpGet]
         public ActionResult Index()
         {
-            //var users = messageHandler.GetUsers();
-            return View("Index"/*, users);
-        }*/
+            MasterModel models = new MasterModel();
+            models.User = messageHandler.GetUser();
+            return View("Index", models);
+        }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult GetChat(string id, string userName)
         {
-            var messageModel = messageHandler.MessageGet();
-            
-            return View("Index", messageModel);
+            MasterModel models = new MasterModel();
+            models.Message = messageHandler.MessageGet();
+            models.User = messageHandler.GetUser();
+            return View("Index", models);
         }
 
 
@@ -32,7 +33,7 @@ namespace Project.Manhattan1.Controllers
         public ActionResult SendChat(MessageModel messageModel)
         {
             messageModel.DateTime = DateTime.Now.ToString();
-            messageModel.UserTo = "ThisUser";
+            messageModel.UserTo = "u";
             messageHandler.MessageSend(messageModel);
             ModelState.Clear();
             return Index();

@@ -61,6 +61,13 @@
         #UserList {
             list-style: none;
         }
+        .sidebar-nav-fixed pull-right affix {
+            height: 100%;
+        }
+        .userList {
+            width: 250px;
+            height: 100%;
+        }
 
         table, td, th {
             border: 1px solid #dddddd;
