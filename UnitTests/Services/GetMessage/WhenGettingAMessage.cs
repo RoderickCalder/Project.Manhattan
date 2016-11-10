@@ -25,6 +25,7 @@ namespace UnitTests.Services.GetMessage
 
             mockClass.SendMessages(testMessage);
             List<MessageModel> List = testClass.GetMessages();
+
             foreach (var item in List)
             {
                 Assert.AreEqual(item.Message, testMessage.Message);
