@@ -137,6 +137,7 @@
     <Compile Include="Services\MessageHandler.cs" />
     <Compile Include="Services\MessageSend.cs" />
     <Compile Include="Services\UserSend.cs" />
+    <Compile Include="Services\UsersMessages.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

@@ -59,6 +59,7 @@
     <Compile Include="Services\GetUser\WhenGettingAUser.cs" />
     <Compile Include="Services\SendMessage\WhenSendingAMessage.cs" />
     <Compile Include="Services\SendUser\WhenSendingAUser.cs" />
+    <Compile Include="Services\GetUserMessage\WhenGettingUserMessages.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
