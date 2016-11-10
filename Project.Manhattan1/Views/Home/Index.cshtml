@@ -13,7 +13,7 @@
 <div class="sidebar-nav-fixed pull-right affix">
     <div class="userList">
         <ul id="UserList">
-            @foreach (var u in Model.user) { 
+            @foreach (var u in Model.User) { 
             <li>@u. </li>
             }
         </ul>
@@ -22,7 +22,7 @@
 <div class="messageBox">
     <div class="chatHistory">
         <table class="messageTable">
-            @foreach (var m in Model.message)
+            @foreach (var m in Model.Message)
             {
                 <tr>
                     <td>@m.UserTo</td>

@@ -15,6 +15,7 @@ namespace Project.Manhattan1.Models
     }
     public class MasterModel
     {
-        public List<MessageModel> message { get; set; } 
+        public List<MessageModel> Message { get; set; }
+        public List<UserModel> User { get; set; }
     }
 }
