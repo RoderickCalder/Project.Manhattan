@@ -48,10 +48,18 @@
         }
 
         .chatHistory {
-            margin: 20px 0px;
             max-height: 400px;
-            overflow: scroll;
             position: relative;
+            overflow-y: scroll;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            background: #240384;
+        }
+        #UserList {
+            list-style: none;
         }
 
         table, td, th {

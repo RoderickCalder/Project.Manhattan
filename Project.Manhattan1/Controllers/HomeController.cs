@@ -11,10 +11,19 @@ namespace Project.Manhattan1.Controllers
     public class HomeController : Controller
     {
         public MessageHandler messageHandler = new MessageHandler();
+
+        /*[HttpGet]
+        public ActionResult Index()
+        {
+            //var users = messageHandler.GetUsers();
+            return View("Index"/*, users);
+        }*/
+
         [HttpGet]
         public ActionResult Index()
         {
             var messageModel = messageHandler.MessageGet();
+            
             return View("Index", messageModel);
         }
 

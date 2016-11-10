@@ -13,4 +13,8 @@ namespace Project.Manhattan1.Models
         public string UserFrom { get; set; }
         public string UserTo { get; set; }
     }
+    public class MasterModel
+    {
+        public List<MessageModel> message { get; set; } 
+    }
 }

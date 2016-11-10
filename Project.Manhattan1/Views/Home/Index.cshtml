@@ -1,20 +1,28 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-    @model   List<Project.Manhattan1.Models.MessageModel>
+    @model   Project.Manhattan1.Models.MasterModel
   }
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="Site.css">
 </head>
-<script type="text/x-jquery-tmpl">
+<script>
     $(".chatHistory").animate({ scrollTop: $(this).height() }, "slow");
-    return false;
 </script>
 <html>
+<div class="sidebar-nav-fixed pull-right affix">
+    <div class="userList">
+        <ul id="UserList">
+            @foreach (var u in Model.user) { 
+            <li>@u. </li>
+            }
+        </ul>
+    </div>
+</div>
 <div class="messageBox">
     <div class="chatHistory">
         <table class="messageTable">
-            @foreach (var m in Model)
+            @foreach (var m in Model.message)
             {
                 <tr>
                     <td>@m.UserTo</td>
