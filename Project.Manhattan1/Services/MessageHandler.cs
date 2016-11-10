@@ -28,9 +28,12 @@ namespace Project.Manhattan1.Services
             return messageModel;
         }
 
-        public bool Handling(MessageModel message)
+        public List<UserModel> GetUser()
         {
-            return true;
-        }
+            var GetRequest = new UserGet();
+            List<UserModel> users = GetRequest.GetUsers();
+            return users;
+        } 
+
     }
 }

@@ -9,6 +9,5 @@ namespace Project.Manhattan1.Services
         bool MessageSend(MessageModel messageModel);
         List<MessageModel> MessageGet();
         MessageModel DataManip(MessageModel messageModel);
-        bool Handling(MessageModel message);
     }
 }
